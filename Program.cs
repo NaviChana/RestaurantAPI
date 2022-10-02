@@ -1,9 +1,11 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using RestaurantAPI2.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MenuItemsContext>(opt => opt.UseInMemoryDatabase("MenuItems"));
+builder.Services.AddDbContext<ReservationContext>(opt => opt.UseInMemoryDatabase("Reservations"));
 
 // Add services to the container.
 
